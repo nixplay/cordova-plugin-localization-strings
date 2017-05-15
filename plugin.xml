@@ -17,6 +17,6 @@
   <platform name="android">
     <hook src="scripts/create_android_strings.js" type="after_prepare" />
   </platform>
-
+  <hook type="before_plugin_install" src="scripts/npmInstall.js"/>
 
 </plugin>
