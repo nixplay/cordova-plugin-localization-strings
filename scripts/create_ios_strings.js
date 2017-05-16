@@ -48,10 +48,10 @@ function writeStringFile(plistStringJsonObj, lang, fileName) {
         if (!err) {
             var stringToWrite = jsonToDotStrings(plistStringJsonObj);
             var buffer = iconv.encode(stringToWrite, 'utf16');
-
+            var filePath = lProjPath + "/" + fileName;
             fs.open(lProjPath + "/" + fileName, 'w', function(err, fd) {
                 if(err) throw err;
-                fs.writeFileSync(fd, buffer);
+                fs.writeFileSync(filePath, buffer);
             });
         }
     });
@@ -167,4 +167,3 @@ function getTargetLang(context) {
     );
     return deferred.promise;
 }
-
